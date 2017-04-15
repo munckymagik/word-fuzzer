@@ -1,0 +1,7 @@
+[package]
+name = "word-fuzzer"
+version = "0.1.0"
+authors = ["Dan Munckton <dan@cultivatehq.com>"]
+
+[dependencies]
+rand = "0.3.15"
