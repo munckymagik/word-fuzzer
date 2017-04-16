@@ -63,8 +63,7 @@ fn it_never_returns_an_identical_string() {
         if word == &fuzzed { count_non_fuzzed += 1; }
     }
 
-    let percentage = count_non_fuzzed as f64 / iterations as f64 * 100.;
-    assert_eq!(percentage, 0.);
+    assert_eq!(count_non_fuzzed, 0);
 }
 
 fn assert_fuzzed(word: &str, fuzzed: &str) {
