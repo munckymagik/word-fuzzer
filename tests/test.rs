@@ -25,7 +25,6 @@ fn it_preserves_three_letter_words() {
 #[test]
 fn it_switches_the_middle_two_letters_of_four_letter_words() {
     assert_eq!("giat", fuzz("gait"));
-    // "忠犬ハチ公" hachiko.chars().nth(1)
 }
 
 #[test]
