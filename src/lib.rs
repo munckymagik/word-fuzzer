@@ -6,7 +6,7 @@ pub fn fuzz(word: &str) -> String {
     let mut out = String::with_capacity(word.len());
     if word.len() == 0 { return out; }
 
-    let chars = word.chars().collect::<Vec<char>>();
+    let chars: Vec<char> = word.chars().collect();
 
     if let Some((first, rest)) = chars.split_first() {
         out.push(*first);
@@ -20,7 +20,7 @@ pub fn fuzz(word: &str) -> String {
                 out.extend(middle.iter().rev());
             } else if middle.len() >= 3 {
                 // 5 or more letter words
-                let mut shuffled = middle.to_owned();
+                let mut shuffled: Vec<char> = middle.to_owned();
                 rand::thread_rng().shuffle(shuffled.as_mut_slice());
 
                 // Deal with 1 in 6 chance of getting the original permutation from shuffle when
